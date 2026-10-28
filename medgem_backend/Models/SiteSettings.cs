@@ -17,5 +17,6 @@ public class SiteSettings
     public string CopyrightText { get; set; } = string.Empty;
     public string DefaultSeoTitle { get; set; } = string.Empty;
     public string DefaultSeoDescription { get; set; } = string.Empty;
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    //public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedAt { get; set; }
 }

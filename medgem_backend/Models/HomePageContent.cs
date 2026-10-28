@@ -28,5 +28,6 @@ public class HomePageContent
     // Contact Banner
     public string ContactBannerHeading { get; set; } = "Start Your Healthcare Journey Today";
     public string ContactBannerSubheading { get; set; } = "Share your requirements and our team will help you explore suitable healthcare options and coordinate your medical journey.";
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+   // public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedAt { get; set; }
 }

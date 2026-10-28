@@ -484,7 +484,7 @@ namespace medgem_backend.Migrations
                             StatPartners = 200,
                             StatPatients = 10000,
                             StatSpecialties = 70,
-                            UpdatedAt = new DateTime(2026, 10, 28, 9, 20, 14, 748, DateTimeKind.Utc).AddTicks(2297),
+                            UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             WhyHeading = "Your Trusted Healthcare Navigation Partner",
                             WhySubheading = "We are dedicated to helping patients access quality healthcare with confidence, clarity and compassionate support at every step."
                         });
@@ -535,7 +535,8 @@ namespace medgem_backend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Rating")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(3, 2)
+                        .HasColumnType("decimal(3,2)");
 
                     b.Property<string>("SeoDescription")
                         .IsRequired()
@@ -698,7 +699,7 @@ namespace medgem_backend.Migrations
                             LinkedInUrl = "",
                             LogoUrl = "",
                             TwitterUrl = "",
-                            UpdatedAt = new DateTime(2026, 10, 28, 9, 20, 14, 749, DateTimeKind.Utc).AddTicks(2438),
+                            UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             WhatsAppNumber = "",
                             YoutubeUrl = ""
                         });

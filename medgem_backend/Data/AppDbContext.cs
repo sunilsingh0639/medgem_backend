@@ -25,8 +25,19 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         modelBuilder.Entity<Destination>().HasIndex(d => d.Slug).IsUnique();
         modelBuilder.Entity<Doctor>().HasIndex(d => d.Slug).IsUnique();
         modelBuilder.Entity<AdminUser>().HasIndex(a => a.Email).IsUnique();
+        modelBuilder.Entity<Hospital>().Property(h => h.Rating).HasPrecision(3, 2);
+        modelBuilder.Entity<HomePageContent>()
+    .HasData(new HomePageContent
+    {
+        Id = 1,
+        UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+    });
 
-        modelBuilder.Entity<HomePageContent>().HasData(new HomePageContent { Id = 1 });
-        modelBuilder.Entity<SiteSettings>().HasData(new SiteSettings { Id = 1 });
+        modelBuilder.Entity<SiteSettings>()
+            .HasData(new SiteSettings
+            {
+                Id = 1,
+                UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+            });
     }
 }

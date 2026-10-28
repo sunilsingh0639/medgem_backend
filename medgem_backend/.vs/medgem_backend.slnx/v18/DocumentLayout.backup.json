@@ -1,12 +1,190 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\mdegem_backend\\medgem_backend\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028101646_FixSeedTimestamps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20261028101646_FixSeedTimestamps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\models\\sitesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:models\\sitesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\models\\homepagecontent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:models\\homepagecontent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|d:\\medgem global healthcare\\medgem_backend\\medgem_backend\\migrations\\20261028100146_syncmodelchanges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F20FEEA5-A590-E086-A249-366806A339D9}|medgem_backend.csproj|solutionrelative:migrations\\20261028100146_syncmodelchanges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028095143_first.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20261028095143_first.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20261028101646_FixSeedTimestamps.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028101646_FixSeedTimestamps.cs",
+              "RelativeDocumentMoniker": "Migrations\\20261028101646_FixSeedTimestamps.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028101646_FixSeedTimestamps.cs",
+              "RelativeToolTip": "Migrations\\20261028101646_FixSeedTimestamps.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T10:16:47.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SiteSettings.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Models\\SiteSettings.cs",
+              "RelativeDocumentMoniker": "Models\\SiteSettings.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Models\\SiteSettings.cs",
+              "RelativeToolTip": "Models\\SiteSettings.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAnwBMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T10:14:21.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomePageContent.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Models\\HomePageContent.cs",
+              "RelativeDocumentMoniker": "Models\\HomePageContent.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Models\\HomePageContent.cs",
+              "RelativeToolTip": "Models\\HomePageContent.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwB4AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T10:13:33.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAkwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T10:06:14.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAACIDAAAAAAAAAAAkwEQDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T10:08:48.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAA8AAABg//////8wwBUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T09:50:23.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20261028100146_SyncModelChanges.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028100146_SyncModelChanges.cs",
+              "RelativeDocumentMoniker": "Migrations\\20261028100146_SyncModelChanges.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028100146_SyncModelChanges.cs",
+              "RelativeToolTip": "Migrations\\20261028100146_SyncModelChanges.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T10:01:46.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-28T09:15:46.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20261028095143_first.cs",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028095143_first.cs",
+              "RelativeDocumentMoniker": "Migrations\\20261028095143_first.cs",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\Migrations\\20261028095143_first.cs",
+              "RelativeToolTip": "Migrations\\20261028095143_first.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T09:51:45.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\medgem global healthcare\\medgem_backend\\medgem_backend\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-28T09:16:27.255Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
