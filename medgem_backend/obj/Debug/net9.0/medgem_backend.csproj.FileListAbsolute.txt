@@ -312,3 +312,6 @@ D:\medgem global healthcare\medgem_backend\medgem_backend\obj\Debug\net9.0\refin
 D:\medgem global healthcare\medgem_backend\medgem_backend\obj\Debug\net9.0\medgem_backend.pdb
 D:\medgem global healthcare\medgem_backend\medgem_backend\obj\Debug\net9.0\medgem_backend.genruntimeconfig.cache
 D:\medgem global healthcare\medgem_backend\medgem_backend\obj\Debug\net9.0\ref\medgem_backend.dll
+D:\New folder\medgemapi\medgem_backend\medgem_backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\New folder\medgemapi\medgem_backend\medgem_backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\New folder\medgemapi\medgem_backend\medgem_backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

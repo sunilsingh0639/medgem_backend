@@ -103,6 +103,78 @@ public static class DbSeeder
             );
         }
 
+        // Seed navigation items
+        if (!db.NavItems.Any())
+        {
+            var home = new NavItem { Label = "Home", Path = "/", DisplayOrder = 1 };
+            var treatments = new NavItem { Label = "Treatments", Path = "/treatments", DisplayOrder = 2 };
+            var hospitals = new NavItem { Label = "Hospitals", Path = "/hospitals", DisplayOrder = 3 };
+            var doctors = new NavItem { Label = "Doctors", Path = "/doctors", DisplayOrder = 4 };
+            var destinations = new NavItem { Label = "Destinations", Path = "/destinations", DisplayOrder = 5 };
+            var wellness = new NavItem { Label = "Wellness", Path = "/wellness", DisplayOrder = 6 };
+            var about = new NavItem { Label = "About Us", Path = "/about", DisplayOrder = 7 };
+            var contact = new NavItem { Label = "Contact", Path = "/contact", DisplayOrder = 8 };
+            db.NavItems.AddRange(home, treatments, hospitals, doctors, destinations, wellness, about, contact);
+            await db.SaveChangesAsync();
+
+            // Treatment dropdown children
+            db.NavItems.AddRange(
+                new NavItem { Label = "Cardiology", Path = "/treatments?cat=Cardiology", ParentId = treatments.Id, DisplayOrder = 1 },
+                new NavItem { Label = "Orthopaedics", Path = "/treatments?cat=Orthopaedics", ParentId = treatments.Id, DisplayOrder = 2 },
+                new NavItem { Label = "Oncology", Path = "/treatments?cat=Oncology", ParentId = treatments.Id, DisplayOrder = 3 },
+                new NavItem { Label = "Neurology", Path = "/treatments?cat=Neurology", ParentId = treatments.Id, DisplayOrder = 4 },
+                new NavItem { Label = "Cosmetic Surgery", Path = "/treatments?cat=Cosmetic", ParentId = treatments.Id, DisplayOrder = 5 },
+                new NavItem { Label = "Fertility & IVF", Path = "/treatments?cat=Fertility", ParentId = treatments.Id, DisplayOrder = 6 },
+                new NavItem { Label = "View All Treatments", Path = "/treatments", IsHighlight = true, ParentId = treatments.Id, DisplayOrder = 7 }
+            );
+            // Destination dropdown children
+            db.NavItems.AddRange(
+                new NavItem { Label = "🇮🇳 India", Path = "/destinations/india", ParentId = destinations.Id, DisplayOrder = 1 },
+                new NavItem { Label = "🇹🇭 Thailand", Path = "/destinations/thailand", ParentId = destinations.Id, DisplayOrder = 2 },
+                new NavItem { Label = "🇸🇬 Singapore", Path = "/destinations/singapore", ParentId = destinations.Id, DisplayOrder = 3 },
+                new NavItem { Label = "🇩🇪 Germany", Path = "/destinations/germany", ParentId = destinations.Id, DisplayOrder = 4 },
+                new NavItem { Label = "🇦🇪 UAE", Path = "/destinations/uae", ParentId = destinations.Id, DisplayOrder = 5 },
+                new NavItem { Label = "🇹🇷 Turkey", Path = "/destinations/turkey", ParentId = destinations.Id, DisplayOrder = 6 },
+                new NavItem { Label = "All Destinations", Path = "/destinations", IsHighlight = true, ParentId = destinations.Id, DisplayOrder = 7 }
+            );
+        }
+
+        // Seed footer columns and links
+        if (!db.FooterColumns.Any())
+        {
+            var quickLinks = new FooterColumn { Heading = "Quick Links", DisplayOrder = 1 };
+            var treatmentsCol = new FooterColumn { Heading = "Treatments", DisplayOrder = 2 };
+            var destinationsCol = new FooterColumn { Heading = "Destinations", DisplayOrder = 3 };
+            db.FooterColumns.AddRange(quickLinks, treatmentsCol, destinationsCol);
+            await db.SaveChangesAsync();
+
+            db.FooterLinks.AddRange(
+                new FooterLink { FooterColumnId = quickLinks.Id, Label = "Home", Url = "/", DisplayOrder = 1 },
+                new FooterLink { FooterColumnId = quickLinks.Id, Label = "About Us", Url = "/about", DisplayOrder = 2 },
+                new FooterLink { FooterColumnId = quickLinks.Id, Label = "Treatments", Url = "/treatments", DisplayOrder = 3 },
+                new FooterLink { FooterColumnId = quickLinks.Id, Label = "Hospitals", Url = "/hospitals", DisplayOrder = 4 },
+                new FooterLink { FooterColumnId = quickLinks.Id, Label = "Doctors", Url = "/doctors", DisplayOrder = 5 },
+                new FooterLink { FooterColumnId = quickLinks.Id, Label = "Wellness", Url = "/wellness", DisplayOrder = 6 },
+                new FooterLink { FooterColumnId = quickLinks.Id, Label = "Contact", Url = "/contact", DisplayOrder = 7 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Cardiology", Url = "/treatments?cat=Cardiology", DisplayOrder = 1 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Orthopaedics", Url = "/treatments?cat=Orthopaedics", DisplayOrder = 2 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Oncology", Url = "/treatments?cat=Oncology", DisplayOrder = 3 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Neurology", Url = "/treatments?cat=Neurology", DisplayOrder = 4 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Cosmetic Surgery", Url = "/treatments?cat=Cosmetic+Surgery", DisplayOrder = 5 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Fertility & IVF", Url = "/treatments?cat=Fertility", DisplayOrder = 6 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Dental Care", Url = "/treatments?cat=Dental+Care", DisplayOrder = 7 },
+                new FooterLink { FooterColumnId = treatmentsCol.Id, Label = "Hair Transplant", Url = "/treatments?cat=Hair+Transplant", DisplayOrder = 8 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "India", Url = "/destinations/india", DisplayOrder = 1 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "Thailand", Url = "/destinations/thailand", DisplayOrder = 2 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "Singapore", Url = "/destinations/singapore", DisplayOrder = 3 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "Germany", Url = "/destinations/germany", DisplayOrder = 4 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "UAE", Url = "/destinations/uae", DisplayOrder = 5 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "Malaysia", Url = "/destinations/malaysia", DisplayOrder = 6 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "Turkey", Url = "/destinations/turkey", DisplayOrder = 7 },
+                new FooterLink { FooterColumnId = destinationsCol.Id, Label = "United Kingdom", Url = "/destinations/united-kingdom", DisplayOrder = 8 }
+            );
+        }
+
         await db.SaveChangesAsync();
     }
 }

@@ -371,6 +371,128 @@ namespace medgem_backend.Migrations
                     b.ToTable("Faqs");
                 });
 
+            modelBuilder.Entity("medgem_backend.Models.FooterColumn", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Heading")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FooterColumns");
+                });
+
+            modelBuilder.Entity("medgem_backend.Models.FooterConfig", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CompanyDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CookiePolicyUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CopyrightText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CtaLabel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CtaUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrivacyPolicyUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TermsUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FooterConfigs");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CompanyDescription = "Medgem Global Healthcare assists patients in discovering and coordinating access to quality medical care across leading international destinations.",
+                            CookiePolicyUrl = "#",
+                            CopyrightText = "Medgem Global Healthcare. All rights reserved.",
+                            CtaLabel = "Free Consultation",
+                            CtaUrl = "/consultation",
+                            PrivacyPolicyUrl = "#",
+                            TermsUrl = "#",
+                            UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+                        });
+                });
+
+            modelBuilder.Entity("medgem_backend.Models.FooterLink", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FooterColumnId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsExternal")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Label")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FooterColumnId");
+
+                    b.ToTable("FooterLinks");
+                });
+
             modelBuilder.Entity("medgem_backend.Models.HomePageContent", b =>
                 {
                     b.Property<int>("Id")
@@ -612,6 +734,44 @@ namespace medgem_backend.Migrations
                     b.ToTable("MediaAssets");
                 });
 
+            modelBuilder.Entity("medgem_backend.Models.NavItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsHighlight")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Label")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("NavItems");
+                });
+
             modelBuilder.Entity("medgem_backend.Models.SiteSettings", b =>
                 {
                     b.Property<int>("Id")
@@ -829,6 +989,37 @@ namespace medgem_backend.Migrations
                         .IsUnique();
 
                     b.ToTable("Treatments");
+                });
+
+            modelBuilder.Entity("medgem_backend.Models.FooterLink", b =>
+                {
+                    b.HasOne("medgem_backend.Models.FooterColumn", "Column")
+                        .WithMany("Links")
+                        .HasForeignKey("FooterColumnId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Column");
+                });
+
+            modelBuilder.Entity("medgem_backend.Models.NavItem", b =>
+                {
+                    b.HasOne("medgem_backend.Models.NavItem", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("medgem_backend.Models.FooterColumn", b =>
+                {
+                    b.Navigation("Links");
+                });
+
+            modelBuilder.Entity("medgem_backend.Models.NavItem", b =>
+                {
+                    b.Navigation("Children");
                 });
 #pragma warning restore 612, 618
         }

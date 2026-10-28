@@ -99,3 +99,31 @@ public record MediaAssetDto(int Id, string FileName, string OriginalName, string
     string AltText, string Caption, string MimeType, long FileSize, DateTime CreatedAt);
 
 public record ApiResponse<T>(bool Success, string Message, T? Data);
+
+// ── Navigation DTOs ──────────────────────────────────────────────────────────
+public record NavItemDto(int Id, string Label, string Path, bool IsHighlight,
+    bool IsVisible, int DisplayOrder, int? ParentId, List<NavItemDto> Children);
+
+public record NavItemUpsertRequest(string Label, string Path, bool IsHighlight,
+    bool IsVisible, int DisplayOrder, int? ParentId);
+
+// ── Footer DTOs ──────────────────────────────────────────────────────────────
+public record FooterConfigDto(int Id, string CompanyDescription, string CtaLabel, string CtaUrl,
+    string CopyrightText, string PrivacyPolicyUrl, string TermsUrl, string CookiePolicyUrl,
+    DateTime UpdatedAt);
+
+public record FooterColumnDto(int Id, string Heading, int DisplayOrder, bool IsVisible,
+    List<FooterLinkDto> Links, DateTime UpdatedAt);
+
+public record FooterColumnUpsertRequest(string Heading, int DisplayOrder, bool IsVisible);
+
+public record FooterLinkDto(int Id, int FooterColumnId, string Label, string Url,
+    bool IsExternal, bool IsVisible, int DisplayOrder);
+
+public record FooterLinkUpsertRequest(int FooterColumnId, string Label, string Url,
+    bool IsExternal, bool IsVisible, int DisplayOrder);
+
+public record PublicFooterDto(FooterConfigDto Config, List<FooterColumnDto> Columns,
+    SiteSettingsDto Settings);
+
+public record PublicNavDto(List<NavItemDto> Items, string CtaLabel, string CtaUrl);

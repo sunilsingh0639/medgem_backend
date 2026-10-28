@@ -17,6 +17,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<SiteSettings> SiteSettings => Set<SiteSettings>();
     public DbSet<MediaAsset> MediaAssets => Set<MediaAsset>();
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
+    public DbSet<NavItem> NavItems => Set<NavItem>();
+    public DbSet<FooterConfig> FooterConfigs => Set<FooterConfig>();
+    public DbSet<FooterColumn> FooterColumns => Set<FooterColumn>();
+    public DbSet<FooterLink> FooterLinks => Set<FooterLink>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -26,18 +30,25 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         modelBuilder.Entity<Doctor>().HasIndex(d => d.Slug).IsUnique();
         modelBuilder.Entity<AdminUser>().HasIndex(a => a.Email).IsUnique();
         modelBuilder.Entity<Hospital>().Property(h => h.Rating).HasPrecision(3, 2);
-        modelBuilder.Entity<HomePageContent>()
-    .HasData(new HomePageContent
-    {
-        Id = 1,
-        UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc)
-    });
 
-        modelBuilder.Entity<SiteSettings>()
-            .HasData(new SiteSettings
-            {
-                Id = 1,
-                UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc)
-            });
+        // NavItem self-referencing
+        modelBuilder.Entity<NavItem>()
+            .HasOne(n => n.Parent)
+            .WithMany(n => n.Children)
+            .HasForeignKey(n => n.ParentId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        // FooterLink → FooterColumn
+        modelBuilder.Entity<FooterLink>()
+            .HasOne(fl => fl.Column)
+            .WithMany(fc => fc.Links)
+            .HasForeignKey(fl => fl.FooterColumnId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        var seedDate = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        modelBuilder.Entity<HomePageContent>().HasData(new HomePageContent { Id = 1, UpdatedAt = seedDate });
+        modelBuilder.Entity<SiteSettings>().HasData(new SiteSettings { Id = 1, UpdatedAt = seedDate });
+        modelBuilder.Entity<FooterConfig>().HasData(new FooterConfig { Id = 1, UpdatedAt = seedDate });
     }
 }
