@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("medgem_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ce640f58f6668fcbb8903242178350c12084287")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f428aa704d70a91a9e7ea12ce4b8ddab89b52c97")]
 [assembly: System.Reflection.AssemblyProductAttribute("medgem_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("medgem_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

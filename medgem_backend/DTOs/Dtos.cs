@@ -127,3 +127,30 @@ public record PublicFooterDto(FooterConfigDto Config, List<FooterColumnDto> Colu
     SiteSettingsDto Settings);
 
 public record PublicNavDto(List<NavItemDto> Items, string CtaLabel, string CtaUrl);
+
+// ── Patient Gallery DTOs ─────────────────────────────────────────────────────
+public record PatientGalleryImageDto(int Id, int PatientGalleryId, string Url, string AltText, string Caption, int DisplayOrder);
+
+public record PatientGalleryDto(int Id, string PatientName, string TreatmentName, string Title,
+    string Description, string Location, string Status, int DisplayOrder, bool ConsentGiven,
+    DateTime CreatedAt, DateTime UpdatedAt, List<PatientGalleryImageDto> Images);
+
+public record PatientGalleryUpsertRequest(string PatientName, string TreatmentName, string Title,
+    string Description, string Location, string Status, int DisplayOrder, bool ConsentGiven);
+
+public record PatientGalleryImageUpsertRequest(int PatientGalleryId, string Url, string AltText, string Caption, int DisplayOrder);
+
+// ── Patient Story DTOs ───────────────────────────────────────────────────────
+public record PatientStoryPhotoDto(int Id, int PatientStoryId, string Url, string AltText, string Caption, int DisplayOrder);
+
+public record PatientStoryDto(int Id, string PatientName, string Treatment, string Hospital,
+    string Title, string Description, string ThumbnailUrl, string VideoUrl, string VideoTitle,
+    string VideoProvider, bool IsFeatured, string Status, int DisplayOrder, bool ConsentGiven,
+    DateTime PublishedAt, DateTime CreatedAt, DateTime UpdatedAt, List<PatientStoryPhotoDto> Photos);
+
+public record PatientStoryUpsertRequest(string PatientName, string Treatment, string Hospital,
+    string Title, string Description, string ThumbnailUrl, string VideoUrl, string VideoTitle,
+    string VideoProvider, bool IsFeatured, string Status, int DisplayOrder, bool ConsentGiven,
+    DateTime PublishedAt);
+
+public record PatientStoryPhotoUpsertRequest(int PatientStoryId, string Url, string AltText, string Caption, int DisplayOrder);

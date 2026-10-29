@@ -21,6 +21,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<FooterConfig> FooterConfigs => Set<FooterConfig>();
     public DbSet<FooterColumn> FooterColumns => Set<FooterColumn>();
     public DbSet<FooterLink> FooterLinks => Set<FooterLink>();
+    public DbSet<PatientGallery> PatientGalleries => Set<PatientGallery>();
+    public DbSet<PatientGalleryImage> PatientGalleryImages => Set<PatientGalleryImage>();
+    public DbSet<PatientStory> PatientStories => Set<PatientStory>();
+    public DbSet<PatientStoryPhoto> PatientStoryPhotos => Set<PatientStoryPhoto>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -43,6 +47,20 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             .HasOne(fl => fl.Column)
             .WithMany(fc => fc.Links)
             .HasForeignKey(fl => fl.FooterColumnId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // PatientGallery → PatientGalleryImage
+        modelBuilder.Entity<PatientGalleryImage>()
+            .HasOne(i => i.Gallery)
+            .WithMany(g => g.Images)
+            .HasForeignKey(i => i.PatientGalleryId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // PatientStory → PatientStoryPhoto
+        modelBuilder.Entity<PatientStoryPhoto>()
+            .HasOne(p => p.Story)
+            .WithMany(s => s.Photos)
+            .HasForeignKey(p => p.PatientStoryId)
             .OnDelete(DeleteBehavior.Cascade);
 
         var seedDate = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc);
